@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+<title id="title">Insulin and metabolism</title><desc id="desc">Simplified educational illustration of glucose in the bloodstream, insulin signalling and cells taking up glucose.</desc>
+<rect width="900" height="520" rx="28" fill="#FAF7F2"/>
+<rect x="80" y="90" width="740" height="340" rx="35" fill="#EAE3F0" stroke="#39243F" stroke-width="5"/><g fill="#E98978" stroke="#39243F" stroke-width="3"><circle cx="170" cy="190" r="22"/><circle cx="235" cy="280" r="22"/><circle cx="300" cy="175" r="22"/><circle cx="360" cy="300" r="22"/></g><g font-family="Arial" fill="#242126" font-size="26"><text x="130" y="390">Glucose</text><text x="430" y="150">Insulin signal</text><text x="635" y="390">Body cells</text></g><path d="M390 250 H590 M565 225 L590 250 L565 275" fill="none" stroke="#39243F" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><g fill="#A9BBA5" stroke="#39243F" stroke-width="4"><rect x="625" y="190" width="125" height="130" rx="32"/><circle cx="688" cy="255" r="27" fill="#FAF7F2"/></g>
+</svg>

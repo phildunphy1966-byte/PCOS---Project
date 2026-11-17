@@ -1,0 +1,45 @@
+{
+  "purpose": "Document what the project datasets can and cannot support. Do not invent survey findings.",
+  "datasets": [
+    {
+      "file": "pcos_dataset.csv",
+      "size": "1,000 rows × 6 columns",
+      "fields": [
+        "Age",
+        "BMI",
+        "Menstrual_Irregularity",
+        "Testosterone_Level(ng/dL)",
+        "Antral_Follicle_Count",
+        "PCOS_Diagnosis"
+      ],
+      "limitations": [
+        "provenance, collection method, population and diagnostic definition are not established by the file itself",
+        "not suitable for Indian prevalence claims",
+        "not an awareness survey"
+      ]
+    },
+    {
+      "file": "Cleaned-Data.csv",
+      "size": "173 rows × 36 columns",
+      "limitations": [
+        "mixed/self-reported fields and ambiguous/free-text values need careful treatment",
+        "inspect codebook and missingness before analysis",
+        "not automatically representative",
+        "not a substitute for the separate male/female awareness survey"
+      ]
+    }
+  ],
+  "primaryResearchKnownFromProject": {
+    "femaleSurveyRespondents": 49,
+    "maleSurvey": "A separate male questionnaire was conducted; do not invent its sample size or results without the response export.",
+    "reportingRule": "Use the actual Google Forms exports to calculate percentages, denominators and quotes. Clearly label convenience sampling and sample limitations."
+  },
+  "analysisRules": [
+    "Do not infer gender when it is not recorded.",
+    "Do not infer diagnosis from symptoms or isolated variables.",
+    "Do not claim Indian population prevalence from convenience or synthetic data.",
+    "Do not infer causation.",
+    "Do not publish individual-level health records.",
+    "Separate awareness findings from clinical-style dataset patterns."
+  ]
+}

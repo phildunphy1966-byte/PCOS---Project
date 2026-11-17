@@ -1,0 +1,35 @@
+{
+  "sources": [
+    {
+      "name": "World Health Organization — Polycystic ovary syndrome fact sheet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/polycystic-ovary-syndrome",
+      "use": "General PCOS overview; verify current page and publication/update date."
+    },
+    {
+      "name": "2023 International Evidence-based Guideline for the Assessment and Management of PCOS",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/10477934/",
+      "use": "Clinical definitions, assessment and management; distinguish adult and adolescent guidance."
+    },
+    {
+      "name": "Indian multicentre PCOS prevalence research",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11581580/",
+      "use": "Indian context; verify study design, sample, diagnostic criteria and limitations before quoting."
+    },
+    {
+      "name": "Previously shared research article",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9826643/",
+      "use": "Project research reference; verify exact claims against article."
+    },
+    {
+      "name": "Menstrual cup systematic review",
+      "url": "https://doi.org/10.1016/S2468-2667(19)30111-2",
+      "use": "Menstrual product safety context; do not imply menstrual products cause PCOS."
+    },
+    {
+      "name": "Know Your Body Lessons",
+      "url": "https://www.knowyourbodylessons.org/",
+      "use": "Reference for age-appropriate health education only; do not copy its brand, content, layout or assets."
+    }
+  ],
+  "editorialRule": "Verify every link and claim at build/release time; record access/review date; clinical content needs qualified healthcare professional review."
+}

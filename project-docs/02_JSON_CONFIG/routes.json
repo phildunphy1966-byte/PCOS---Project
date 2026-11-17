@@ -1,0 +1,128 @@
+{
+  "routes": [
+    {
+      "title": "Home",
+      "path": "/"
+    },
+    {
+      "title": "Choose your route",
+      "path": "/start"
+    },
+    {
+      "title": "Know Your Body hub",
+      "path": "/know-your-body"
+    },
+    {
+      "title": "Reproductive anatomy",
+      "path": "/know-your-body/anatomy"
+    },
+    {
+      "title": "Menstrual cycle",
+      "path": "/know-your-body/menstrual-cycle"
+    },
+    {
+      "title": "Hormones",
+      "path": "/know-your-body/hormones"
+    },
+    {
+      "title": "Insulin & metabolism",
+      "path": "/know-your-body/metabolism"
+    },
+    {
+      "title": "Understand PCOS",
+      "path": "/pcos"
+    },
+    {
+      "title": "PCOS features",
+      "path": "/pcos/features"
+    },
+    {
+      "title": "Diagnosis",
+      "path": "/pcos/diagnosis"
+    },
+    {
+      "title": "Health associations",
+      "path": "/pcos/health"
+    },
+    {
+      "title": "Management",
+      "path": "/pcos/management"
+    },
+    {
+      "title": "Female pathway",
+      "path": "/pathways/women"
+    },
+    {
+      "title": "Female experiences",
+      "path": "/pathways/women/experiences"
+    },
+    {
+      "title": "Female wellbeing",
+      "path": "/pathways/women/wellbeing"
+    },
+    {
+      "title": "Male ally pathway",
+      "path": "/pathways/allies"
+    },
+    {
+      "title": "Supporting someone",
+      "path": "/pathways/allies/support"
+    },
+    {
+      "title": "Learn & Explore",
+      "path": "/explore"
+    },
+    {
+      "title": "Myths & facts",
+      "path": "/explore/myths"
+    },
+    {
+      "title": "Knowledge check",
+      "path": "/explore/quiz"
+    },
+    {
+      "title": "FAQs",
+      "path": "/explore/faqs"
+    },
+    {
+      "title": "Find Support",
+      "path": "/support"
+    },
+    {
+      "title": "When to seek help",
+      "path": "/support/when-to-seek-help"
+    },
+    {
+      "title": "Appointment preparation",
+      "path": "/support/appointment"
+    },
+    {
+      "title": "Reliable resources",
+      "path": "/support/resources"
+    },
+    {
+      "title": "About",
+      "path": "/about"
+    },
+    {
+      "title": "Sources",
+      "path": "/about/sources"
+    },
+    {
+      "title": "Accessibility",
+      "path": "/about/accessibility"
+    },
+    {
+      "title": "Privacy",
+      "path": "/about/privacy"
+    }
+  ],
+  "notFound": {
+    "title": "Page not found",
+    "recovery": [
+      "/",
+      "/explore",
+      "/support"
+    ]
+  }
+}

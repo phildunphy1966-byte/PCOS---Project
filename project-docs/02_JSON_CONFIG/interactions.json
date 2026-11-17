@@ -1,0 +1,36 @@
+{
+  "global": [
+    "responsive navigation menu",
+    "site search with useful empty state",
+    "breadcrumbs",
+    "related-topic links",
+    "age preference selector (optional, skippable, editable, resettable)",
+    "pathway selector (female / male ally / explore everything)"
+  ],
+  "learning": [
+    "interactive labelled anatomy diagram with text equivalent",
+    "menstrual cycle stepper that does not assume a universal 28-day cycle",
+    "hormone communication diagram",
+    "insulin and metabolism explainer",
+    "myth-versus-fact reveal cards",
+    "educational knowledge quiz with explanations (never diagnostic)",
+    "FAQ accordions",
+    "print-friendly appointment preparation checklist"
+  ],
+  "behaviourRules": [
+    "all controls keyboard and touch operable",
+    "visible focus states",
+    "no health answers or sensitive data stored",
+    "all cards and CTAs navigate to real routes",
+    "browser back/forward and direct nested-route refresh must work",
+    "respect reduced-motion preference"
+  ],
+  "safety": [
+    "no symptom checker",
+    "no diagnosis or risk score",
+    "no medication dosing",
+    "no cure claims",
+    "no weight stigma",
+    "male route is ally education only"
+  ]
+}

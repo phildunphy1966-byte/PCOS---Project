@@ -1,0 +1,42 @@
+{
+  "brand": "PCOS Unlocked",
+  "tagline": "Understand your body. Question the myths. Find your way forward.",
+  "style": "Contemporary editorial health education; warm, calm, inclusive, scientifically grounded; not childish or overly clinical.",
+  "colors": {
+    "deepPlum": "#39243F",
+    "softLilac": "#EAE3F0",
+    "warmCoral": "#E98978",
+    "sage": "#A9BBA5",
+    "cream": "#FAF7F2",
+    "ink": "#242126",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "body": "Inter, Atkinson Hyperlegible, or system sans-serif",
+    "headings": "Restrained, legible display sans-serif"
+  },
+  "layout": {
+    "approach": "mobile-first",
+    "spacing": "generous whitespace",
+    "content": "short readable blocks, clear hierarchy, diagrams as explanatory anchors"
+  },
+  "illustration": {
+    "style": "original flat/vector educational diagrams",
+    "rules": [
+      "clear labels",
+      "restrained palette",
+      "accessible text alternatives",
+      "not to scale where appropriate",
+      "no stock-photo medical clichés",
+      "no pink-only gender coding"
+    ]
+  },
+  "accessibility": {
+    "contrast": "WCAG AA target",
+    "keyboard": true,
+    "visibleFocus": true,
+    "reducedMotion": true,
+    "colorNotSoleSignal": true,
+    "touchTargets": "comfortable mobile targets"
+  }
+}

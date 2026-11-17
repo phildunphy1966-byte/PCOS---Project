@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+<title id="title">Simplified reproductive anatomy</title><desc id="desc">Educational schematic showing uterus, ovaries, fallopian tubes, cervix and vaginal canal. Not to scale.</desc>
+<rect width="900" height="520" rx="28" fill="#FAF7F2"/>
+<g fill="none" stroke="#39243F" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"><path d="M450 190 C410 130 330 130 280 180 C240 220 250 260 300 270"/><path d="M450 190 C490 130 570 130 620 180 C660 220 650 260 600 270"/><path d="M450 175 C380 180 350 250 370 310 C385 355 415 365 450 365 C485 365 515 355 530 310 C550 250 520 180 450 175Z"/><path d="M450 365 L450 425"/></g><g fill="#E98978" stroke="#39243F" stroke-width="5"><ellipse cx="260" cy="270" rx="42" ry="27"/><ellipse cx="640" cy="270" rx="42" ry="27"/></g><g font-family="Arial,sans-serif" font-size="24" fill="#242126"><text x="90" y="110">Fallopian tube</text><text x="90" y="300">Ovary</text><text x="485" y="250">Uterus</text><text x="485" y="400">Cervix</text><text x="485" y="465">Vaginal canal</text></g>
+</svg>

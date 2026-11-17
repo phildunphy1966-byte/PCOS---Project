@@ -1,0 +1,171 @@
+{
+  "site": "PCOS Unlocked",
+  "navigation": [
+    {
+      "label": "Know Your Body",
+      "href": "/know-your-body"
+    },
+    {
+      "label": "Understand PCOS",
+      "href": "/pcos"
+    },
+    {
+      "label": "Learn & Explore",
+      "href": "/explore"
+    },
+    {
+      "label": "Find Support",
+      "href": "/support"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    }
+  ],
+  "contentSections": [
+    {
+      "id": "body",
+      "title": "Know Your Body",
+      "pages": [
+        {
+          "title": "Reproductive Anatomy",
+          "href": "/know-your-body/anatomy"
+        },
+        {
+          "title": "Menstrual Cycle",
+          "href": "/know-your-body/menstrual-cycle"
+        },
+        {
+          "title": "Hormones",
+          "href": "/know-your-body/hormones"
+        },
+        {
+          "title": "Insulin & Metabolism",
+          "href": "/know-your-body/metabolism"
+        }
+      ]
+    },
+    {
+      "id": "pcos",
+      "title": "Understand PCOS",
+      "pages": [
+        {
+          "title": "What is PCOS?",
+          "href": "/pcos"
+        },
+        {
+          "title": "Features & Experiences",
+          "href": "/pcos/features"
+        },
+        {
+          "title": "Diagnosis",
+          "href": "/pcos/diagnosis"
+        },
+        {
+          "title": "Health Associations",
+          "href": "/pcos/health"
+        },
+        {
+          "title": "Management",
+          "href": "/pcos/management"
+        }
+      ]
+    },
+    {
+      "id": "female",
+      "title": "Female Learning Path",
+      "pages": [
+        {
+          "title": "Female Pathway",
+          "href": "/pathways/women"
+        },
+        {
+          "title": "Experiences",
+          "href": "/pathways/women/experiences"
+        },
+        {
+          "title": "Wellbeing",
+          "href": "/pathways/women/wellbeing"
+        }
+      ]
+    },
+    {
+      "id": "ally",
+      "title": "Male Ally Path",
+      "pages": [
+        {
+          "title": "Male Ally Pathway",
+          "href": "/pathways/allies"
+        },
+        {
+          "title": "How to Support Someone",
+          "href": "/pathways/allies/support"
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Learn & Explore",
+      "pages": [
+        {
+          "title": "Myths & Facts",
+          "href": "/explore/myths"
+        },
+        {
+          "title": "Knowledge Check",
+          "href": "/explore/quiz"
+        },
+        {
+          "title": "FAQs",
+          "href": "/explore/faqs"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Find Support",
+      "pages": [
+        {
+          "title": "When to Seek Help",
+          "href": "/support/when-to-seek-help"
+        },
+        {
+          "title": "Prepare for an Appointment",
+          "href": "/support/appointment"
+        },
+        {
+          "title": "Reliable Resources",
+          "href": "/support/resources"
+        }
+      ]
+    }
+  ],
+  "mythFactCards": [
+    {
+      "claim": "Everyone with PCOS has ovarian cysts.",
+      "answer": "False",
+      "explanation": "The name can be misleading. Not everyone with PCOS has polycystic ovarian morphology, and ovarian appearance alone does not define the condition."
+    },
+    {
+      "claim": "Only people with larger bodies have PCOS.",
+      "answer": "False",
+      "explanation": "PCOS occurs across body sizes. Appearance or weight cannot establish whether someone has PCOS."
+    },
+    {
+      "claim": "PCOS always causes infertility.",
+      "answer": "False",
+      "explanation": "Fertility experiences vary. Many people with PCOS can conceive, sometimes with clinical support."
+    },
+    {
+      "claim": "Menstrual cups, tampons or pads cause PCOS.",
+      "answer": "No established evidence supports this claim",
+      "explanation": "These menstrual products are not established causes of PCOS."
+    },
+    {
+      "claim": "An online quiz can diagnose PCOS.",
+      "answer": "False",
+      "explanation": "Symptoms can overlap with other conditions. Diagnosis requires assessment by a qualified clinician."
+    }
+  ],
+  "globalDisclaimer": "Educational resource only. Not a diagnostic tool and not a substitute for professional medical advice."
+}

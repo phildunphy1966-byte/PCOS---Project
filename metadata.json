@@ -1,0 +1,10 @@
+{
+  "name": "PCOS Unlocked",
+  "description": "PCOS Unlocked — understand your body, question the myths, and find your way forward.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

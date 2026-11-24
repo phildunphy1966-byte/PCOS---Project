@@ -105,7 +105,8 @@ const cards = [
 ["Ask & Talk","Search-grounded answers and real-time voice conversations","/assistant"],
 ["Find Support","Read expert specialist advice, prep for visits, and find reliable resources","/support"]
 ];
-function pushRoute(to){history.pushState({},"",to);window.dispatchEvent(new PopStateEvent("popstate"));window.scrollTo(0,0)}
+function scrollToRouteTarget(to){const idx=to.indexOf("#");if(idx===-1){window.scrollTo(0,0);return}const id=to.slice(idx+1);if(!id){window.scrollTo(0,0);return}window.setTimeout(()=>{const el=document.getElementById(id);if(el){el.scrollIntoView({behavior:"smooth",block:"start"})}},60)}
+function pushRoute(to){history.pushState({},"",to);window.dispatchEvent(new PopStateEvent("popstate"));scrollToRouteTarget(to)}
 function replaceRoute(to){history.replaceState({},"",to);window.dispatchEvent(new PopStateEvent("popstate"));window.scrollTo(0,0)}
 function Link({to,children,className="",onNavigate}){return <a className={className} href={to} onClick={e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();if(onNavigate){onNavigate(to)}else{pushRoute(to)}}}>{children}</a>}
 function App(){
@@ -143,14 +144,17 @@ function App(){
  const assetFor=path.includes("anatomy")?"reproductive-anatomy.svg":path.includes("menstrual-cycle")?"menstrual-cycle.svg":path.includes("hormones")?"hormone-communication.svg":path.includes("metabolism")?"insulin-metabolism.svg":null;
   const isMythsPage=path==="/myths-and-facts"||path==="/explore/myths";
   if(isLanding){
-   return <LandingPage onAutoEnter={()=>replaceRoute("/home")} onEnter={()=>handleNavigate("/home")} onNavigate={handleNavigate} theme={theme} onToggleTheme={handleToggleTheme}/>;
+   return <>
+    <LandingPage onAutoEnter={()=>replaceRoute("/home")} onEnter={()=>handleNavigate("/home")} onNavigate={handleNavigate} onOpenMenu={()=>setMenu(prev=>!prev)} isMenuOpen={menu} theme={theme} onToggleTheme={handleToggleTheme}/>
+    <StructuredMenu isOpen={menu} currentPath={path} onClose={()=>setMenu(false)} onNavigate={handleNavigate}/>
+   </>;
   }
   return <div className="app">
    <header className="header"><Link to="/home" className="brand" onNavigate={handleNavigate}><span className="brand-mark">P</span><span>PCOS <b>Unlocked</b><small>Understand your body. Question the myths.</small></span></Link>
     <nav className="nav" aria-label="Primary navigation">{TOP_BAR_LINKS.map(item=><Link key={item.to} to={item.to} className={path===item.to?"active":""} onNavigate={handleNavigate}>{item.label}</Link>)}</nav>
     <div className="header-actions">
      <button type="button" className="theme-toggle" data-testid="theme-toggle" onClick={handleToggleTheme} aria-pressed={theme==="dark"} aria-label={theme==="dark"?"Switch to light mode":"Switch to dark mode"} title={theme==="dark"?"Switch to light mode":"Switch to dark mode"}><span className="theme-toggle-icon" aria-hidden="true">{theme==="dark"?"☀":"☾"}</span><span className="theme-toggle-text">{theme==="dark"?"Light":"Dark"}</span></button>
-     <button type="button" className={`menu${menu?" open":""}`} data-testid="hamburger-menu-btn" onClick={()=>setMenu(prev=>!prev)} aria-expanded={menu} aria-controls="structured-menu-drawer" aria-label={menu?"Close structured menu":"Open structured menu"}><span className="menu-lines" aria-hidden="true">{menu?"✕":"☰"}</span><span className="menu-label">{menu?"Close":"Menu"}</span></button>
+     <button type="button" className={`menu${menu?" open":""}`} data-testid="hamburger-menu-btn" onClick={()=>setMenu(prev=>!prev)} aria-expanded={menu} aria-controls="structured-menu-drawer" aria-label={menu?"Close structured menu":"Open structured menu"}><svg className="menu-icon-svg" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">{menu?<path d="M5 5L15 15M15 5L5 15" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>:<path d="M3 5.5H17M3 10H17M3 14.5H17" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>}</svg><span className="menu-label">{menu?"Close":"Menu"}</span></button>
     </div>
    </header>
    <StructuredMenu isOpen={menu} currentPath={path} onClose={()=>setMenu(false)} onNavigate={handleNavigate}/>

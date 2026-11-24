@@ -6,6 +6,8 @@ export default function LandingPage({
   onAutoEnter,
   onEnter,
   onNavigate,
+  onOpenMenu,
+  isMenuOpen = false,
   theme = "light",
   onToggleTheme,
   autoRedirectMs = LANDING_AUTO_REDIRECT_MS,
@@ -31,6 +33,11 @@ export default function LandingPage({
   const handleManualEnter = () => {
     cancelledRef.current = true;
     if (onEnter) onEnter();
+  };
+
+  const handleMenuToggle = () => {
+    cancelledRef.current = true;
+    if (onOpenMenu) onOpenMenu();
   };
 
   const go = (to) => (e) => {
@@ -71,6 +78,43 @@ export default function LandingPage({
           <a href="/home" className="landing-skip" onClick={go("/home")}>
             Skip intro →
           </a>
+          {onOpenMenu && (
+            <button
+              type="button"
+              className={`menu${isMenuOpen ? " open" : ""}`}
+              data-testid="hamburger-menu-btn"
+              onClick={handleMenuToggle}
+              aria-expanded={isMenuOpen}
+              aria-controls="structured-menu-drawer"
+              aria-label={isMenuOpen ? "Close structured menu" : "Open structured menu"}
+            >
+              <svg
+                className="menu-icon-svg"
+                width="16"
+                height="16"
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                {isMenuOpen ? (
+                  <path
+                    d="M5 5L15 15M15 5L5 15"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                  />
+                ) : (
+                  <path
+                    d="M3 5.5H17M3 10H17M3 14.5H17"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                  />
+                )}
+              </svg>
+              <span className="menu-label">{isMenuOpen ? "Close" : "Menu"}</span>
+            </button>
+          )}
         </div>
       </header>
 

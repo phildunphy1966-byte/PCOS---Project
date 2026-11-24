@@ -63,7 +63,7 @@ function WrappedAxisTick({ x, y, payload }) {
 
   return (
     <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={12} textAnchor="middle" fill="#514b53" fontSize={11}>
+      <text x={0} y={0} dy={12} textAnchor="middle" fill="var(--chart-tick)" fontSize={11}>
         {lines.map((line, idx) => (
           <tspan key={idx} x={0} dy={idx === 0 ? 0 : 13}>
             {line}
@@ -213,22 +213,22 @@ export default function LearningInsightsChart({
               margin={{ top: 12, right: 14, left: -14, bottom: 12 }}
               barGap={8}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#eee8e2" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" vertical={false} />
               <XAxis
                 dataKey="name"
                 interval={0}
                 height={42}
                 tick={<WrappedAxisTick />}
-                axisLine={{ stroke: "#dfd5e2" }}
+                axisLine={{ stroke: "var(--chart-axis)" }}
                 tickLine={false}
               />
               <YAxis
                 allowDecimals={false}
-                tick={{ fill: "#716973", fontSize: 12 }}
+                tick={{ fill: "var(--chart-muted)", fontSize: 12 }}
                 axisLine={false}
                 tickLine={false}
               />
-              <Tooltip content={<ChartTooltip />} cursor={{ fill: "#f4eff6" }} />
+              <Tooltip content={<ChartTooltip />} cursor={{ fill: "var(--chart-cursor)" }} />
               <Legend
                 formatter={renderLegendLabel}
                 wrapperStyle={{ fontSize: "12px", paddingTop: "8px" }}
@@ -237,7 +237,7 @@ export default function LearningInsightsChart({
                 dataKey="completed"
                 name="Completed"
                 stackId="progress"
-                fill="#39243f"
+                fill="var(--chart-bar-primary)"
                 radius={[0, 0, 6, 6]}
                 maxBarSize={56}
               />
@@ -245,7 +245,7 @@ export default function LearningInsightsChart({
                 dataKey="remaining"
                 name="Remaining"
                 stackId="progress"
-                fill="#d9cbdc"
+                fill="var(--chart-bar-remaining)"
                 radius={[6, 6, 0, 0]}
                 maxBarSize={56}
               />
@@ -256,22 +256,22 @@ export default function LearningInsightsChart({
               margin={{ top: 12, right: 14, left: -14, bottom: 18 }}
               barGap={6}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#eee8e2" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" vertical={false} />
               <XAxis
                 dataKey="topic"
                 interval={0}
                 height={48}
                 tick={<WrappedAxisTick />}
-                axisLine={{ stroke: "#dfd5e2" }}
+                axisLine={{ stroke: "var(--chart-axis)" }}
                 tickLine={false}
               />
               <YAxis
                 allowDecimals={false}
-                tick={{ fill: "#716973", fontSize: 12 }}
+                tick={{ fill: "var(--chart-muted)", fontSize: 12 }}
                 axisLine={false}
                 tickLine={false}
               />
-              <Tooltip content={<ChartTooltip />} cursor={{ fill: "#f4eff6" }} />
+              <Tooltip content={<ChartTooltip />} cursor={{ fill: "var(--chart-cursor)" }} />
               <Legend
                 formatter={renderLegendLabel}
                 wrapperStyle={{ fontSize: "12px", paddingTop: "8px" }}
@@ -280,7 +280,7 @@ export default function LearningInsightsChart({
                 dataKey="myths"
                 name="Myths addressing topic"
                 stackId="topics"
-                fill="#c66e62"
+                fill="var(--chart-bar-coral)"
                 radius={[0, 0, 6, 6]}
                 maxBarSize={48}
               />
@@ -288,7 +288,7 @@ export default function LearningInsightsChart({
                 dataKey="facts"
                 name="Facts addressing topic"
                 stackId="topics"
-                fill="#6f8f69"
+                fill="var(--chart-bar-sage)"
                 radius={[6, 6, 0, 0]}
                 maxBarSize={48}
               />
@@ -299,22 +299,22 @@ export default function LearningInsightsChart({
               margin={{ top: 12, right: 14, left: -14, bottom: 12 }}
               barGap={8}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#eee8e2" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" vertical={false} />
               <XAxis
                 dataKey="category"
                 interval={0}
                 height={44}
                 tick={<WrappedAxisTick />}
-                axisLine={{ stroke: "#dfd5e2" }}
+                axisLine={{ stroke: "var(--chart-axis)" }}
                 tickLine={false}
               />
               <YAxis
                 allowDecimals={false}
-                tick={{ fill: "#716973", fontSize: 12 }}
+                tick={{ fill: "var(--chart-muted)", fontSize: 12 }}
                 axisLine={false}
                 tickLine={false}
               />
-              <Tooltip content={<ChartTooltip />} cursor={{ fill: "#f4eff6" }} />
+              <Tooltip content={<ChartTooltip />} cursor={{ fill: "var(--chart-cursor)" }} />
               <Legend
                 formatter={renderLegendLabel}
                 wrapperStyle={{ fontSize: "12px", paddingTop: "8px" }}
@@ -322,14 +322,14 @@ export default function LearningInsightsChart({
               <Bar
                 dataKey="myths"
                 name="Myths"
-                fill="#c66e62"
+                fill="var(--chart-bar-coral)"
                 radius={[6, 6, 0, 0]}
                 maxBarSize={40}
               />
               <Bar
                 dataKey="facts"
                 name="Facts"
-                fill="#39243f"
+                fill="var(--chart-bar-primary)"
                 radius={[6, 6, 0, 0]}
                 maxBarSize={40}
               />

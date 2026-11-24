@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import SearchGroundedAssistant from "./SearchGroundedAssistant";
+import VoiceCompanion from "./VoiceCompanion";
 import {
   EXPERT_ADVICE_SPECIALISTS,
   filterSpecialistProfiles,
@@ -8,7 +10,11 @@ import {
   URGENT_CHECKIN_SIGNS,
 } from "../utils/supportGuide";
 
-export default function SupportSection({ onInteract, onNavigate }) {
+export default function SupportSection({
+  ageRange = "",
+  onInteract,
+  onNavigate,
+}) {
   const [activeSpecialistId, setActiveSpecialistId] = useState(
     EXPERT_ADVICE_SPECIALISTS[0].id
   );
@@ -300,6 +306,18 @@ export default function SupportSection({ onInteract, onNavigate }) {
             ))}
           </div>
         )}
+      </section>
+
+      <section
+        className="support-ai-section"
+        id="support-ask-and-talk"
+        data-testid="support-ask-and-talk"
+        aria-label="Ask and Talk support tools"
+      >
+        <div className="ai-hub">
+          <SearchGroundedAssistant ageRange={ageRange} onInteract={onInteract} />
+          <VoiceCompanion onInteract={onInteract} />
+        </div>
       </section>
     </div>
   );

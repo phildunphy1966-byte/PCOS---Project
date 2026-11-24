@@ -614,26 +614,26 @@ export default function SymptomTracker({
                   data={weeklySummary.days}
                   margin={{ top: 10, right: 12, left: -16, bottom: 4 }}
                 >
-                  <CartesianGrid strokeDasharray="3 3" stroke="#eee8e2" vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" vertical={false} />
                   <XAxis
                     dataKey="dayLabel"
-                    tick={{ fill: "#514b53", fontSize: 12 }}
-                    axisLine={{ stroke: "#dfd5e2" }}
+                    tick={{ fill: "var(--chart-tick)", fontSize: 12 }}
+                    axisLine={{ stroke: "var(--chart-axis)" }}
                     tickLine={false}
                   />
                   <YAxis
                     domain={[0, DAILY_ROUTINES.length]}
                     allowDecimals={false}
-                    tick={{ fill: "#716973", fontSize: 12 }}
+                    tick={{ fill: "var(--chart-muted)", fontSize: 12 }}
                     axisLine={false}
                     tickLine={false}
                   />
-                  <Tooltip content={<WeeklyChartTooltip />} cursor={{ fill: "#f4eff6" }} />
+                  <Tooltip content={<WeeklyChartTooltip />} cursor={{ fill: "var(--chart-cursor)" }} />
                   <Legend formatter={renderLegendLabel} wrapperStyle={{ fontSize: "12px" }} />
                   <Bar
                     dataKey="routinesDone"
                     name="Routines followed (out of 5)"
-                    fill="#39243f"
+                    fill="var(--chart-bar-primary)"
                     radius={[6, 6, 0, 0]}
                     maxBarSize={42}
                   />

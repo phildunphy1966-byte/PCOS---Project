@@ -137,6 +137,13 @@ export const SUPPORT_NAVIGATION_CARDS = [
     description:
       "Bring a 7-day summary of mood, fatigue, cycles, steps, protein, sleep, and water to your visit.",
   },
+  {
+    to: "/assistant",
+    eyebrow: "SEARCH & VOICE COMPANION",
+    title: "Ask & Talk",
+    description:
+      "Ask PCOS questions grounded in live Google Search or start a real-time voice conversation anytime.",
+  },
 ];
 
 export const SUPPORT_RESOURCES_LIST = [

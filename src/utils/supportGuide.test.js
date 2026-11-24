@@ -58,7 +58,8 @@ test("SPECIALIST_DIRECTORY_PROFILES includes nutritionists and specialists with 
 });
 
 test("support navigation cards, urgent check-in signs, and trusted resources are populated", () => {
-  assert.ok(SUPPORT_NAVIGATION_CARDS.length >= 4);
+  assert.ok(SUPPORT_NAVIGATION_CARDS.length >= 5);
+  assert.ok(SUPPORT_NAVIGATION_CARDS.some((card) => card.to === "/assistant" && card.title.includes("Ask & Talk")));
   assert.ok(URGENT_CHECKIN_SIGNS.length >= 4);
   assert.ok(SUPPORT_RESOURCES_LIST.length >= 3);
   for (const card of SUPPORT_NAVIGATION_CARDS) {

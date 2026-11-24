@@ -8,6 +8,17 @@
     <meta property="og:title" content="PCOS Unlocked" />
     <meta property="og:description" content="PCOS Unlocked — understand your body, question the myths, and find your way forward." />
     <title>PCOS Unlocked</title>
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("pcos-theme");
+          var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = saved === "dark" || saved === "light" ? saved : prefersDark ? "dark" : "light";
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

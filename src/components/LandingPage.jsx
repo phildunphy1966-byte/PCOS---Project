@@ -6,6 +6,8 @@ export default function LandingPage({
   onAutoEnter,
   onEnter,
   onNavigate,
+  theme = "light",
+  onToggleTheme,
   autoRedirectMs = LANDING_AUTO_REDIRECT_MS,
 }) {
   const cancelledRef = useRef(false);
@@ -47,9 +49,29 @@ export default function LandingPage({
             PCOS <b>Unlocked</b>
           </span>
         </a>
-        <a href="/home" className="landing-skip" onClick={go("/home")}>
-          Skip intro →
-        </a>
+        <div className="header-actions">
+          {onToggleTheme && (
+            <button
+              type="button"
+              className="theme-toggle"
+              data-testid="theme-toggle"
+              onClick={onToggleTheme}
+              aria-pressed={theme === "dark"}
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              <span className="theme-toggle-icon" aria-hidden="true">
+                {theme === "dark" ? "☀" : "☾"}
+              </span>
+              <span className="theme-toggle-text">
+                {theme === "dark" ? "Light" : "Dark"}
+              </span>
+            </button>
+          )}
+          <a href="/home" className="landing-skip" onClick={go("/home")}>
+            Skip intro →
+          </a>
+        </div>
       </header>
 
       <main className="landing-main">
@@ -87,7 +109,7 @@ export default function LandingPage({
           </div>
 
           <nav className="landing-quick-links" aria-label="Direct section links">
-            <a href="/home#understand-pcos" onClick={go("/home")}>
+            <a href="/home" onClick={go("/home")}>
               Main Overview
             </a>
             <span aria-hidden="true">·</span>

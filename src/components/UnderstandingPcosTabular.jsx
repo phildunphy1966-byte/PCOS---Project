@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PcosFaqSection from "./PcosFaqSection";
 import {
   AUDIENCE_PERSPECTIVES,
   filterAudienceGuidance,
@@ -1075,6 +1076,18 @@ export default function UnderstandingPcosTabular({
               Read Expert Advice in Find Support
             </a>
           </div>
+        </div>
+      ) : activeTab.id === "faqs" ? (
+        <div
+          role="tabpanel"
+          aria-label="Frequently Asked Questions"
+          data-testid="understanding-tab-faqs"
+        >
+          <PcosFaqSection
+            embedded
+            onInteract={onInteract}
+            onNavigate={onNavigate}
+          />
         </div>
       ) : (
         <div

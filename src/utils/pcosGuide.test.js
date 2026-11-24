@@ -3,24 +3,43 @@ import assert from "node:assert/strict";
 import {
   AUDIENCE_PERSPECTIVES,
   filterAudienceGuidance,
+  filterPcosFaqs,
   getManagementPillar,
   getNutritionCategory,
   getUnderstandingTab,
   MANAGEMENT_PILLARS,
   NUTRITION_TIPS_CATEGORIES,
+  PCOS_FAQ_ASKED_BY,
+  PCOS_FAQ_TOPICS,
+  PCOS_FAQS,
   UNDERSTANDING_PCOS_TABS,
 } from "./pcosGuide.js";
 
-test("UNDERSTANDING_PCOS_TABS includes managing PCOS, Nutritional Tips, and core topics", () => {
+test("UNDERSTANDING_PCOS_TABS includes managing PCOS, Nutritional Tips, FAQs, and core topics", () => {
   const ids = UNDERSTANDING_PCOS_TABS.map((tab) => tab.id);
   assert.ok(ids.includes("managing"));
   assert.ok(ids.includes("nutrition"));
   assert.ok(ids.includes("overview"));
   assert.ok(ids.includes("features"));
   assert.ok(ids.includes("diagnosis"));
+  assert.ok(ids.includes("faqs"));
   assert.equal(getUnderstandingTab("managing").label, "Managing PCOS");
   assert.equal(getUnderstandingTab("nutrition").label, "Nutritional Tips");
+  assert.equal(getUnderstandingTab("faqs").label, "FAQs");
   assert.equal(getUnderstandingTab("non-existent").id, "managing");
+});
+
+test("PCOS_FAQS and filterPcosFaqs cover diet, symptoms, and emotional support for patients and partners", () => {
+  assert.ok(PCOS_FAQ_TOPICS.length >= 4);
+  assert.ok(PCOS_FAQ_ASKED_BY.length >= 3);
+  assert.ok(PCOS_FAQS.length >= 9);
+
+  for (const topic of ["diet", "symptoms", "emotional-support"]) {
+    assert.ok(filterPcosFaqs(topic, "patient").length >= 1);
+    assert.ok(filterPcosFaqs(topic, "partner").length >= 1);
+  }
+  assert.equal(filterPcosFaqs("all", "all").length, PCOS_FAQS.length);
+  assert.ok(filterPcosFaqs("emotional-support", "partner").length >= 2);
 });
 
 test("NUTRITION_TIPS_CATEGORIES provides structured swaps and multi-audience takeaways", () => {

@@ -75,6 +75,14 @@ export const UNDERSTANDING_PCOS_TABS = [
       "male-ally": "Offer to accompany partners or family members to appointments, help write down questions, and support follow-up lifestyle routines at home.",
     },
   },
+  {
+    id: "faqs",
+    label: "FAQs",
+    eyebrow: "QUESTIONS & CLEAR ANSWERS",
+    title: "Frequently Asked Questions",
+    lead:
+      "Common questions from patients and partners covering everyday diet, PCOS symptoms, and respectful emotional support.",
+  },
 ];
 
 export const AUDIENCE_PERSPECTIVES = [
@@ -532,4 +540,120 @@ export function filterAudienceGuidance(pillar, perspectiveId = "all") {
     (item) => item.audienceId === perspectiveId
   );
   return matched.length > 0 ? matched : pillar.perspectives;
+}
+
+export const PCOS_FAQ_TOPICS = [
+  { id: "all", label: "All Topics" },
+  { id: "diet", label: "Diet" },
+  { id: "symptoms", label: "Symptoms" },
+  { id: "emotional-support", label: "Emotional Support" },
+];
+
+export const PCOS_FAQ_ASKED_BY = [
+  { id: "all", label: "Patients & Partners" },
+  { id: "patient", label: "Patients" },
+  { id: "partner", label: "Partners & Family" },
+];
+
+export const PCOS_FAQS = [
+  {
+    id: "faq-diet-patient-1",
+    topic: "diet",
+    topicLabel: "Diet",
+    askedBy: "patient",
+    askedByLabel: "Asked by Patients",
+    question: "Do I have to give up rice, roti, or sweets forever if I have PCOS?",
+    answer:
+      "No. Extreme food elimination often increases stress and triggers stronger rebound cravings. Instead, pair familiar carbs like rice or roti with fibre (sabzi, salad) and a clear protein source (dal, paneer, curd, eggs, fish) so blood sugar rises steadily. Enjoying a small sweet right after a balanced meal causes a gentler glucose response than eating sugar alone on an empty stomach.",
+  },
+  {
+    id: "faq-diet-partner-1",
+    topic: "diet",
+    topicLabel: "Diet",
+    askedBy: "partner",
+    askedByLabel: "Asked by Partners & Family",
+    question: "How can I support my partner's PCOS diet at home without sounding controlling?",
+    answer:
+      "Avoid commenting on portion sizes, weight, or 'good vs bad' foods. Instead, make balanced meals the effortless shared household norm—keep nuts, roasted chana, curd, and fresh vegetables stocked, offer to cook protein-rich breakfasts together, and join for a relaxed 10–15 minute evening walk after dinner.",
+  },
+  {
+    id: "faq-diet-patient-2",
+    topic: "diet",
+    topicLabel: "Diet",
+    askedBy: "patient",
+    askedByLabel: "Asked by Patients",
+    question: "Why do I feel sleepy after lunch or crave sugar around 4–5 p.m.?",
+    answer:
+      "Afternoon energy dips and sudden cravings often happen when earlier meals were low in protein or heavily skewed toward refined carbohydrates. Front-loading 18–25g of protein at breakfast and pairing lunch with vegetables, pulses, or curd steadies insulin response and keeps afternoon energy much calmer.",
+  },
+  {
+    id: "faq-symptoms-patient-1",
+    topic: "symptoms",
+    topicLabel: "Symptoms",
+    askedBy: "patient",
+    askedByLabel: "Asked by Patients",
+    question: "Why do my PCOS symptoms look different from my friend's or what I see online?",
+    answer:
+      "PCOS is a syndrome rather than a single rigid checklist. One person may experience irregular cycles and hormonal acne, while another notices scalp hair thinning, fatigue, or missed ovulation without visible skin changes. Clinicians review your personal symptom pattern, cycle history, and lab tests together.",
+  },
+  {
+    id: "faq-symptoms-partner-1",
+    topic: "symptoms",
+    topicLabel: "Symptoms",
+    askedBy: "partner",
+    askedByLabel: "Asked by Partners & Family",
+    question: "Are fatigue, mood swings, and skin flares actually linked to PCOS—not just stress?",
+    answer:
+      "Yes. Hormone signalling shifts involving insulin, cortisol, androgens, and unpredictable ovulation directly influence energy levels, sleep quality, skin oil production, and emotional resilience. Treating fatigue or mood dips as real physical signals helps your partner feel understood rather than dismissed.",
+  },
+  {
+    id: "faq-symptoms-patient-2",
+    topic: "symptoms",
+    topicLabel: "Symptoms",
+    askedBy: "patient",
+    askedByLabel: "Asked by Patients",
+    question: "When should irregular periods or missed cycles prompt a doctor visit?",
+    answer:
+      "Book a visit with a qualified gynecologist or general physician if periods consistently stay shorter than 21 days or longer than 35 days (outside the first 1–2 years of starting periods), if you miss 3 or more cycles in a row, or if bleeding becomes unusually heavy or painful.",
+  },
+  {
+    id: "faq-emotional-patient-1",
+    topic: "emotional-support",
+    topicLabel: "Emotional Support",
+    askedBy: "patient",
+    askedByLabel: "Asked by Patients",
+    question: "How do I cope with anxiety, appearance frustration, or relative's comments about weight and marriage?",
+    answer:
+      "Higher rates of anxiety and low mood are clinically recognised in PCOS—emotional exhaustion is valid, not a weakness. Focus on habits you can control gently (sleep, walking, nourished meals), use short boundary scripts with extended family, and consider confidential support from a mental health counselor or Tele MANAS (14416).",
+  },
+  {
+    id: "faq-emotional-partner-1",
+    topic: "emotional-support",
+    topicLabel: "Emotional Support",
+    askedBy: "partner",
+    askedByLabel: "Asked by Partners & Family",
+    question: "What can I say when my partner feels overwhelmed, discouraged, or tired of managing PCOS?",
+    answer:
+      "Start with validation rather than unsolicited fixes: 'I see how tiring today feels—you don't have to carry this alone. How can I make tonight easier?' Offer practical relief like handling chores, picking up groceries, or attending a clinic visit together if she wants company.",
+  },
+  {
+    id: "faq-emotional-partner-2",
+    topic: "emotional-support",
+    topicLabel: "Emotional Support",
+    askedBy: "partner",
+    askedByLabel: "Asked by Partners & Family",
+    question: "Does PCOS always mean infertility, and how should partners talk about the future?",
+    answer:
+      "No—PCOS is associated with less predictable ovulation, not automatic infertility. Many people with PCOS conceive naturally or with straightforward medical guidance. Keep future conversations calm, hopeful, and grounded in an OB-GYN consultation rather than fear or family pressure.",
+  },
+];
+
+export function filterPcosFaqs(topicId = "all", askedById = "all") {
+  const topic = topicId || "all";
+  const askedBy = askedById || "all";
+  return PCOS_FAQS.filter((item) => {
+    const matchTopic = topic === "all" || item.topic === topic;
+    const matchAskedBy = askedBy === "all" || item.askedBy === askedBy;
+    return matchTopic && matchAskedBy;
+  });
 }

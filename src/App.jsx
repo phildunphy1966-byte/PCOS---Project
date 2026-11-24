@@ -12,6 +12,8 @@ import SupportSection from "./components/SupportSection";
 import KnowYourBodySection from "./components/KnowYourBodySection";
 import PcosFaqSection from "./components/PcosFaqSection";
 import MaleAllySection from "./components/MaleAllySection";
+import StructuredMenu from "./components/StructuredMenu";
+import { TOP_BAR_LINKS } from "./utils/navigation";
 import {
   applyDocumentTheme,
   loadThemePreference,
@@ -124,7 +126,7 @@ function App(){
  useEffect(()=>{saveTrackerLogs(window.localStorage,trackerLogs)},[trackerLogs]);
  const handleToggleTheme=()=>{setTheme(prev=>toggleThemeValue(prev))};
  const touchDailyStreak=()=>{setStreak(prev=>recordDailyActivity(prev))};
- const handleNavigate=(to)=>{if(to&&to!=="/"){touchDailyStreak()}pushRoute(to)};
+ const handleNavigate=(to)=>{setMenu(false);if(to&&to!=="/"){touchDailyStreak()}pushRoute(to)};
  const handleToggleArticle=(articleId)=>{touchDailyStreak();setCompletedArticles(prev=>toggleCompletedId(prev,articleId))};
  const handleAnswerQuiz=(questionId,optionIndex)=>{touchDailyStreak();setQuizAnswers(prev=>({...prev,[questionId]:String(optionIndex)}))};
  const handleResetProgress=()=>{setCompletedArticles([]);setQuizAnswers({});setStreak({...DEFAULT_STREAK});clearProgressState(window.localStorage)};
@@ -145,12 +147,13 @@ function App(){
   }
   return <div className="app">
    <header className="header"><Link to="/home" className="brand" onNavigate={handleNavigate}><span className="brand-mark">P</span><span>PCOS <b>Unlocked</b><small>Understand your body. Question the myths.</small></span></Link>
-    <nav className={menu?"nav open":"nav"}><Link to="/know-your-body" onNavigate={handleNavigate}>Know Your Body</Link><Link to="/pcos" onNavigate={handleNavigate}>Understand PCOS</Link><Link to="/tracker" onNavigate={handleNavigate}>Symptom Tracker</Link><Link to="/explore" onNavigate={handleNavigate}>Learn & Explore</Link><Link to="/support" onNavigate={handleNavigate}>Find Support</Link><Link to="/about" onNavigate={handleNavigate}>About</Link></nav>
+    <nav className="nav" aria-label="Primary navigation">{TOP_BAR_LINKS.map(item=><Link key={item.to} to={item.to} className={path===item.to?"active":""} onNavigate={handleNavigate}>{item.label}</Link>)}</nav>
     <div className="header-actions">
      <button type="button" className="theme-toggle" data-testid="theme-toggle" onClick={handleToggleTheme} aria-pressed={theme==="dark"} aria-label={theme==="dark"?"Switch to light mode":"Switch to dark mode"} title={theme==="dark"?"Switch to light mode":"Switch to dark mode"}><span className="theme-toggle-icon" aria-hidden="true">{theme==="dark"?"☀":"☾"}</span><span className="theme-toggle-text">{theme==="dark"?"Light":"Dark"}</span></button>
-     <button className="menu" onClick={()=>setMenu(!menu)} aria-label="Toggle navigation">☰</button>
+     <button type="button" className={`menu${menu?" open":""}`} data-testid="hamburger-menu-btn" onClick={()=>setMenu(prev=>!prev)} aria-expanded={menu} aria-controls="structured-menu-drawer" aria-label={menu?"Close structured menu":"Open structured menu"}><span className="menu-lines" aria-hidden="true">{menu?"✕":"☰"}</span><span className="menu-label">{menu?"Close":"Menu"}</span></button>
     </div>
    </header>
+   <StructuredMenu isOpen={menu} currentPath={path} onClose={()=>setMenu(false)} onNavigate={handleNavigate}/>
    <main>
    {home?<><section className="hero"><div className="hero-copy"><p className="eyebrow">A BODY-LITERACY & PCOS AWARENESS SPACE</p><h1>Your body deserves <em>clear answers.</em></h1><p className="lead">Explore PCOS, hormones and reproductive health through clear explanations, interactive visuals and myth-busting guides.</p><div className="actions"><Link className="btn primary" to="/pcos" onNavigate={handleNavigate}>Explore PCOS <span>↗</span></Link><Link className="btn secondary" to="/tracker" onNavigate={handleNavigate}>Track Symptoms & Habits</Link><Link className="btn secondary" to="/assistant" onNavigate={handleNavigate}>Ask & Talk with AI</Link></div><p className="note">No judgement. No diagnosis. Just a clearer place to begin.</p></div><div className="hero-art"><div className="orb orb1"></div><div className="orb orb2"></div><div className="art-card"><span className="art-spark">✳</span><span className="art-word">Know<br/>yourself.</span><span className="art-caption">LEARN · QUESTION · UNDERSTAND</span></div></div></section>
    <section className="section"><div className="section-head"><p className="eyebrow">START WHERE YOU ARE</p><h2>Explore the parts that matter to you.</h2><p>Move through the topics in any order. You can always come back to the basics.</p></div><div className="cards">{cards.slice(0,6).map((c,i)=><Link to={c[2]} className="topic-card" key={c[0]} onNavigate={handleNavigate}><span className="card-no">0{i+1}</span><h3>{c[0]}</h3><p>{c[1]}</p><span className="arrow">↗</span></Link>)}</div></section>
